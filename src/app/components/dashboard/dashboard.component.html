@@ -1,0 +1,68 @@
+<div>
+    <mat-toolbar>
+    <mat-toolbar-row>
+
+      <div>
+        <!--When we click on this button side nav menu should be open-->
+        <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>reorder</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+      </div>
+      &nbsp;
+      <span class="fill-remaining-space"></span>
+
+      <div>
+
+         <button  style="width: 520px;">
+          <input matInput placeholder="Search" style="width: 485px;"/>
+<mat-icon>
+          search  
+          </mat-icon>
+          </button>
+
+       </div>
+       
+       <span class="fill-remaining-space"></span>
+       <span class="fill-remaining-space"></span>
+       <span class="fill-remaining-space"></span>
+       <span class="fill-remaining-space"></span>
+
+
+
+       <div>
+         <button mat-button>
+           <mat-icon>refresh</mat-icon>
+         </button>
+       </div>
+       
+       <div>
+         <button mat-button>
+           <mat-icon>view_module</mat-icon>
+         </button>
+       </div>
+
+       <div>
+         <button mat-button>
+           <mat-icon>settings</mat-icon>
+         </button>
+       </div>
+
+       <div>
+        <button mat-button>
+          <mat-icon>apps</mat-icon>
+        </button>
+      </div>
+
+      <div>
+        <button mat-button>
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </div>
+
+        </mat-toolbar-row>    
+  </mat-toolbar>
+</div>
