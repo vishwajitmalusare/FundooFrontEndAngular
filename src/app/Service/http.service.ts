@@ -14,8 +14,6 @@ export class HttpService {
   public postRequest(url: any, data: any): any {
     return this.httpclient.post(this.baseUrl + url, data, {headers: new HttpHeaders().set("token", localStorage.getItem('token'))}
     );
-    //   { headers: new HttpHeaders().set("token", localStorage.getItem('token')) }
-
   }
 
   public getRquest(url: any): any {

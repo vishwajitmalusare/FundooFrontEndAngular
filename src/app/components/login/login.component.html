@@ -1,19 +1,28 @@
-<h1>FundooNotes</h1>
-<div class="container">
-        <mat-label>Login</mat-label>
+<mat-card class="card" fxLayout="row" fxLayoutAlign="center center">
+        <!-- <div fxLayout="row" fxLayoutAlign="center center" > -->
+        <mat-card-header>
+                <mat-card-title>FundooNotes</mat-card-title>
+                <mat-card-subtitle>Login</mat-card-subtitle>
+        </mat-card-header>
 
-        <mat-form-field appearance="outline">
-                <mat-label>Email</mat-label>
-                <input matInput placeholder="Enter email" [formControl]="email" [(ngModel)]="login.email" required>
-        </mat-form-field>
+        <mat-card-content>
+                <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Enter email" [formControl]="email" [(ngModel)]="login.email"
+                                required>
+                               </mat-form-field>
 
-        <mat-form-field appearance="outline">
-                <mat-label>Password</mat-label>
-                <input matInput placeholder="Enter password" [formControl]="password" [(ngModel)]="login.password" required>
-        </mat-form-field>
-</div>
+                                <mat-form-field appearance="outline">
+                                        <mat-label>Password</mat-label>
+                                        <input matInput placeholder="Enter password" [formControl]="password"
+                                                [(ngModel)]="login.password" required>
+                                </mat-form-field>
 
-<div class="button-row">
-        <button (click)="onLogin()">Login</button>
-        <button routerLink="/register">You are new to FundooNotes ..?</button>
-</div>
+                        </mat-card-content>
+
+                        <mat-card-actions>
+                                <button mat-raised-button (click)="onLogin()">Login</button>
+                                <button mat-raised-button routerLink="/register">You are new to FundooNotes ..?</button>
+                        </mat-card-actions>
+
+                        </mat-card>
