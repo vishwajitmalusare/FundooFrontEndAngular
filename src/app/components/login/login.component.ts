@@ -30,13 +30,13 @@ export class LoginComponent implements OnInit {
   onLogin(){
     console.log("Inside login method");
     this.token = localStorage.getItem(this.token);
+    console.log(this.token);
     this.httpService.postRequest('userservice/login', this.login).subscribe(
       (response: any): any => 
       {
         if(response.statuscode==200) {
           console.log(response);
           localStorage.setItem('token',response.data);
-          localStorage.setItem('name',response.name);
           localStorage.setItem('email',this.login.email);
           this.snackbar.open("login successfully","close",{duration:2500})
           console.log("Successfully logged in");

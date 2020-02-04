@@ -12,11 +12,12 @@ export class HttpService {
   token = this.route.snapshot.paramMap.get('token');
 
   public postRequest(url: any, data: any): any {
-    return this.httpclient.post(this.baseUrl + url, data, 
+    return this.httpclient.post(this.baseUrl + url, data, {headers: new HttpHeaders().set("token", localStorage.getItem('token'))}
     );
     //   { headers: new HttpHeaders().set("token", localStorage.getItem('token')) }
 
   }
+
   public getRquest(url: any): any {
     return this.httpclient.get(this.baseUrl + url, { headers: new HttpHeaders().set("token", localStorage.getItem('token')) });
   }
