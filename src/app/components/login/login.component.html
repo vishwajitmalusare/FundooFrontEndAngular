@@ -4,16 +4,16 @@
 
         <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="Enter email ...">
+                <input matInput placeholder="Enter email" [formControl]="email" [(ngModel)]="login.email" required>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Enter password ...">
+                <input matInput placeholder="Enter password" [formControl]="password" [(ngModel)]="login.password" required>
         </mat-form-field>
 </div>
 
 <div class="button-row">
-        <button mat-flat-button >Basic</button>
-        <a mat-raised-button routerLink=".">You are new to FundooNotes ..?</a>
+        <button (click)="onLogin()">Login</button>
+        <button routerLink="/register">You are new to FundooNotes ..?</button>
 </div>
