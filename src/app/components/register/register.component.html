@@ -2,36 +2,35 @@
 <div class="container">
         <mat-label>Registration</mat-label>
 <br>
-
         <mat-form-field appearance="outline">
-             <mat-label>First Name</mat-label>
-                <input matInput placeholder="Enter First Name ...">
-        </mat-form-field>
-<br>
-        <mat-form-field appearance="outline">
-        <mat-label>Last Name</mat-label>
-                <input matInput placeholder="Enter Last Name ...">
+             <mat-label>Name</mat-label>
+                <input matInput placeholder="Enter Name ..." [formControl]="name" 
+                [(ngModel)]="register.name" required >
         </mat-form-field>
 <br>
             
         <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
-                <input matInput placeholder="Enter email ...">
+                <input matInput placeholder="Enter email ..." [formControl]="email"
+                [(ngModel)]="register.email" required >
         </mat-form-field>
 <br>
 
         <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Enter password ...">
+                <input matInput placeholder="Enter password ..." [formControl]="password"
+                [(ngModel)]="register.password" >
         </mat-form-field>
 <br>
 
         <mat-form-field appearance="outline">
         <mat-label>Phone Number</mat-label>
-                <input matInput placeholder="Enter Phone Number ...">
+                <input matInput placeholder="Enter Phone Number ..." [formControl]="phoneNumber"
+                [(ngModel)]="register.phoneNumber" >
         </mat-form-field>
 </div>
 
 <div class="button-row">
-        <button routerLink="/login" mat-flat-button>Register</button>
+        <button (click)="onRegister()" >Register</button>
+        <button routerLink="/login">AlreadyRegistered</button>
 </div>

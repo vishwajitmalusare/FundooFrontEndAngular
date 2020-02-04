@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Register } from 'src/app/Model/register';
 import { HttpService } from 'src/app/Service/http.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
@@ -10,39 +11,38 @@ import { FormGroup,FormControl,Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private httpservice:HttpService,private snackbar:MatSnackBar) 
-  { }
-register:Register= new Register();
-registerForm:FormGroup;
+  constructor(private httpservice:HttpService, private snackbar:MatSnackBar) 
+  {}
+  register:Register= new Register();
+  registerForm:FormGroup;
 
-name=new FormControl(this.register.name,[Validators.minLength(4)])
-email= new FormControl(this.register.email,Validators.required)
-password = new FormControl(this.register.password,[Validators.required, Validators.minLength(6)])
-phoneNumber = new FormControl(this.register.phoneNumber,[Validators.required])
+  name=new FormControl(this.register.name,[Validators.minLength(4)])
+  email = new FormControl(this.register.email, Validators.required)
+  password = new FormControl(this.register.password,[Validators.required, Validators.minLength(6)])
+  phoneNumber = new FormControl(this.register.phoneNumber,[Validators.required])
+
   ngOnInit() {
+
   }
 
-  onRegister() {
-    console.log("register")
+  onRegister()
+  {
+    console.log("In register");
     console.log(this.register)
-
-    this.httpservice.postRequest('userservice/register',this.register)
-    .subscribe(
-      (response: any): any =>
-      {
-        console.log("inside on register")
-        if(response.statuscode==200)
-        {
+    this.httpservice.postRequest('userservice/register',this.register).subscribe(
+      (response: any): any => {
+        
+        console.log("inside response post req")
+        if(response.statuscode==200) {
           console.log(response);
           this.snackbar.open(
-            "registered successfully","undo",{duration:2500}
+            "regitered successfully","undo",{duration:2500}
           )
         }
-        else
-        {
+        else {
           console.log(response);
           this.snackbar.open(
-            "Registration Failed","undo", { duration:2500}
+            "Registration Failed","undo",{duration:2500}
           )
         }
       }
