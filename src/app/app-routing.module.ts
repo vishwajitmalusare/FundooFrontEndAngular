@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from '../app/components/login/login.component';
 import { RegisterComponent } from '../app/components/register/register.component';
 import { DashboardComponent } from '../app/components/dashboard/dashboard.component';
+import { SidenevmenuComponent } from '../app/components/sidenevmenu/sidenevmenu.component';
 
 const routes: Routes = [
   
@@ -14,6 +15,9 @@ const routes: Routes = [
     }, 
     { 
       path:'dashboard', component:DashboardComponent
+    },
+    {
+      path:'sidenav', component:SidenevmenuComponent
     }
 
   ]

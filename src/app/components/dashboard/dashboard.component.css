@@ -3,3 +3,8 @@
        Every toolbar row uses a flexbox row layout. */
     flex: 0.2 0.2 auto;
   }
+
+  .search {
+   margin-top: 40px;
+   border: 1px black;
+ }
