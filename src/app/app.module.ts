@@ -24,7 +24,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { CreatenoteComponent } from './components/createnote/createnote.component'; 
+import { CreatenoteComponent } from './components/createnote/createnote.component';
+import { GetAllNoteComponent } from './components/get-all-note/get-all-note.component'; 
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CreatenoteComponent } from './components/createnote/createnote.componen
     SidenevmenuComponent,
     ResetPasswordComponent,
     ForgotPasswordComponent,
-    CreatenoteComponent
+    CreatenoteComponent,
+    GetAllNoteComponent
   ],
   imports: [
     AppRoutingModule,

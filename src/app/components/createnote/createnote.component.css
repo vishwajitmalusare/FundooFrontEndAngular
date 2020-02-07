@@ -1,0 +1,50 @@
+.notes{
+    border: none;
+    height: 48px;
+    width: 414px;
+    background-color: white;
+    font-size: 15px;
+    border-color: lightgray;
+    margin-left: 3px;
+    outline: none;
+    margin-top: -12px;
+}
+
+.matCard{
+    height: 45px;
+    margin-top: 60px;
+    max-width: 45%;
+    margin-right: 50px;
+}
+
+.mainCard{
+    border-radius: 6px;
+    height: 155px;
+}
+#title{
+border: none;
+height: 48px;
+background-color: white;
+font-size: 30px;
+border-color: lightgray;
+margin-left: 2px;
+outline: none;
+}
+
+.icon{
+    margin-right: 115px;
+    margin-block-start: 19px;
+    margin-left: 4px;
+}
+
+.title{
+border: none;
+height: 48px;
+width: 414px;
+background-color: white;
+font-size: 18px;
+border-color: lightgray;
+margin-left: 3px;
+outline: none;
+margin-top: -12px;
+}

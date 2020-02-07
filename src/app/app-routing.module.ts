@@ -6,6 +6,8 @@ import { DashboardComponent } from '../app/components/dashboard/dashboard.compon
 import { SidenevmenuComponent } from '../app/components/sidenevmenu/sidenevmenu.component';
 import { ResetPasswordComponent } from '../app/components/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from '../app/components/forgot-password/forgot-password.component';
+import { CreatenoteComponent } from 'src/app/components/createnote/createnote.component';
+import { GetAllNoteComponent } from 'src/app/components/get-all-note/get-all-note.component';
 
 const routes: Routes = [
   
@@ -26,6 +28,12 @@ const routes: Routes = [
     },
     {
       path:'forgetpassword', component:ForgotPasswordComponent
+    },
+    {
+      path:'createnote', component:CreatenoteComponent
+    },
+    {
+      path:'getallnotes', component:GetAllNoteComponent
     }
 
   ]
