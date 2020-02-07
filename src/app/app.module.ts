@@ -22,7 +22,9 @@ import { SidenevmenuComponent } from './components/sidenevmenu/sidenevmenu.compo
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
-import { ResetPasswordComponent } from './components/reset-password/reset-password.component'; 
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { CreatenoteComponent } from './components/createnote/createnote.component'; 
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     RegisterComponent,
     DashboardComponent,
     SidenevmenuComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ForgotPasswordComponent,
+    CreatenoteComponent
   ],
   imports: [
     AppRoutingModule,

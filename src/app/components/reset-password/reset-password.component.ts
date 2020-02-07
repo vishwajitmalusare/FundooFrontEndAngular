@@ -20,7 +20,7 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   onForget() {
-    this.userService.sendResetLink("userservice/forget?emailId="+this.email).subscribe(
+    this.userService.sendResetLink("userservice/forgetpassword?emailId="+this.email).subscribe(
 
       (response: any): any => {
         console.log('forgot done =>', response);
