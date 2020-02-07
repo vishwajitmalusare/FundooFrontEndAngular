@@ -1,15 +1,11 @@
 <div>
   <mat-toolbar>
     <mat-toolbar-row>
+  
       <div>
-        <!--When we click on this button side nav menu should be open-->
-        <button mat-button [matMenuTriggerFor]="menu">
+        <button mat-button (click)="drawer.toggle()">
           <mat-icon>reorder</mat-icon>
         </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
-        </mat-menu>
       </div>
       &nbsp;
       <span class="fill-remaining-space"></span>

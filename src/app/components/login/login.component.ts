@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from 'src/app/Service/http.service';
-import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Login } from 'src/app/Model/login';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { UserService } from 'src/app/Service/user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,38 +12,32 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(
-    private httpService:HttpService,
-    private snackbar:MatSnackBar,
-    private route:ActivatedRoute
-  ) { }
+  
+  constructor(private router: Router, private snackbar: MatSnackBar, private http: HttpClient) { }
+  
+  login: Login = new Login();
+  userService: UserService = new UserService(this.http, this.router);
 
-  login:Login= new Login();
-  token:string
+  email= new FormControl('',[Validators.required, Validators.email]);
+  password= new FormControl('',[Validators.required, Validators.maxLength(15)]);
+  ngOnInit() { }
 
-  ngOnInit() {
-
-    this.token = this.route.snapshot.paramMap.get('token');
-  }
-  email = new FormControl(this.login.email, Validators.required)
-  password = new FormControl(this.login.password, Validators.required);
-
-  onLogin(){
-    console.log("Inside login method");
-    this.token = localStorage.getItem(this.token);
-    console.log(this.token);
-    this.httpService.postRequest('userservice/login', this.login).subscribe(
-      (response: any): any => 
-      {
-        if(response.statuscode==200) {
+  onLogin() {
+    this.userService.userLogin(this.login).subscribe(
+      
+      (response: any): any => {
+        console.log(response)
+        if(response.statuscode == 200) {
           console.log(response);
-          localStorage.setItem('token',response.data);
-          localStorage.setItem('email',this.login.email);
-          this.snackbar.open("login successfully","close",{duration:2500})
+          localStorage.setItem('token',response.token);
+          localStorage.setItem('name', response.statusMessage);
+          localStorage.setItem('email', this.login.email);
+          this.snackbar.open("Login successfull...","close", { duration: 2500} )
           console.log("Successfully logged in");
+          this.router.navigateByUrl('/dashboard')
         }
         else {
-          this.snackbar.open("Invalid username or password","close",{duration:2500})
+          this.snackbar.open("Invalid username or password", "close", { duration: 2500 })
         }
       }
     )

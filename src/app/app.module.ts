@@ -20,6 +20,9 @@ import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SidenevmenuComponent } from './components/sidenevmenu/sidenevmenu.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component'; 
 
 @NgModule({
   declarations: [
@@ -27,26 +30,28 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    SidenevmenuComponent
+    SidenevmenuComponent,
+    ResetPasswordComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    FlexLayoutModule,
+    HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
-    HttpClientModule,
-    FormsModule,
     MatSnackBarModule,
-    FormsModule,
-    ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
-    FlexLayoutModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDividerModule,
+    MatListModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

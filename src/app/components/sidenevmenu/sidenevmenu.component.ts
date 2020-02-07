@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenevmenuComponent implements OnInit {
 
+  showFiller = false;
   constructor() { }
 
   ngOnInit() {

@@ -4,6 +4,7 @@ import { LoginComponent } from '../app/components/login/login.component';
 import { RegisterComponent } from '../app/components/register/register.component';
 import { DashboardComponent } from '../app/components/dashboard/dashboard.component';
 import { SidenevmenuComponent } from '../app/components/sidenevmenu/sidenevmenu.component';
+import { ResetPasswordComponent } from '../app/components/reset-password/reset-password.component'
 
 const routes: Routes = [
   
@@ -18,6 +19,10 @@ const routes: Routes = [
     },
     {
       path:'sidenav', component:SidenevmenuComponent
+    },
+    
+    {
+      path:'resetpassword', component:ResetPasswordComponent
     }
 
   ]

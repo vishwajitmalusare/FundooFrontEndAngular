@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Register } from 'src/app/Model/register';
-import { HttpService } from 'src/app/Service/http.service';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/Service/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { FormGroup,FormControl,Validators } from '@angular/forms';
+import { FormControl,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -10,42 +12,31 @@ import { FormGroup,FormControl,Validators } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  
+  constructor(private http: HttpClient, private snackbar: MatSnackBar, private router: Router) { }
 
-  constructor(private httpservice:HttpService, private snackbar:MatSnackBar) 
-  {}
-  register:Register= new Register();
-  registerForm:FormGroup;
+  ngOnInit() { }
 
-  name=new FormControl(this.register.name,[Validators.minLength(4)])
-  email = new FormControl(this.register.email, Validators.required)
-  password = new FormControl(this.register.password,[Validators.required, Validators.minLength(6)])
-  phoneNumber = new FormControl(this.register.phoneNumber,[Validators.required])
+  register: Register = new Register();
+  userService: UserService = new UserService(this.http, this.router);
+  name = new FormControl ('',[Validators.required, Validators.minLength(5)]);
+  email = new FormControl('',[Validators.required]);
+  password = new FormControl('',[Validators.required]);
+  phoneNumber = new FormControl('',[Validators.required]);
+  
+  onRegister() {
+    this.userService.usreRegister(this.register).subscribe(
 
-  ngOnInit() {
-
-  }
-
-  onRegister()
-  {
-    console.log("In register");
-    console.log(this.register)
-    this.httpservice.postRequest('userservice/register',this.register).subscribe(
       (response: any): any => {
-        
-        console.log("inside response post req")
-        if(response.statuscode==200) {
+        if(response.statusCode == 201) {
           console.log(response);
-          this.snackbar.open(
-            "regitered successfully","undo",{duration:2500}
-          )
+          this.snackbar.open("register successfully...","undo", { duration:2500 })
         }
         else {
           console.log(response);
-          this.snackbar.open(
-            "Registration Failed","undo",{duration:2500}
-          )
+          this.snackbar.open("Registration Failed","undo", {duration:2500} )
         }
       }
-    );
+    )   
   }
 }

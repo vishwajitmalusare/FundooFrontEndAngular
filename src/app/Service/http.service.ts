@@ -1,26 +1,35 @@
-import { Injectable } from '@angular/core';
+import {  Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class HttpService {
-  baseUrl = environment.baseUrl
-  constructor(private httpclient: HttpClient, private route: ActivatedRoute) { }
-  token = this.route.snapshot.paramMap.get('token');
+
+  constructor(private httpclient: HttpClient, private router: Router) { }
+
+  baseUrl = environment.baseUrl;
 
   public postRequest(url: any, data: any): any {
-    return this.httpclient.post(this.baseUrl + url, data, {headers: new HttpHeaders().set("token", localStorage.getItem('token'))}
-    );
+    return this.httpclient.post(this.baseUrl + url, data, httpOptions);
   }
 
-  public getRquest(url: any): any {
-    return this.httpclient.get(this.baseUrl + url, { headers: new HttpHeaders().set("token", localStorage.getItem('token')) });
+  public getRequest(url: any): any {
+    return this.httpclient.get(this.baseUrl + url,httpOptions);
   }
 
-  public putRequest(url: any): any {
-    return this.httpclient.put(this.baseUrl + url, { headers: new HttpHeaders().set("token", localStorage.getItem('token')) });
+  public putRequest(url: any, data:any): any {
+    return this.httpclient.put(this.baseUrl + url,data,httpOptions);
+  }
+
+  public deleteRequest(url: any): any {
+    return this.httpclient.delete(this.baseUrl+ url, httpOptions);;
   }
 }
