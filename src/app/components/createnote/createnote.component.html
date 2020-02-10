@@ -4,7 +4,7 @@
 
         <mat-card fxlayout="row" fxlayoutAlign="center center" fxFlex="40" (click)="showBar()" *ngIf="!showAddNote"
             style="border-radius: px;">
-            <input style="height: 10px" mat-input class="notes" placeholder="Takea note...">
+            <input style="height: 10px" mat-input class="notes" placeholder="Take a note...">
         </mat-card>
     </div>
 
@@ -12,7 +12,7 @@
 
         <form [formGroup]="createForm">
 
-            <mat-card fxLayout="column" sxLayoutAlign="start start" *ngIf="showAddNote" fxFlex="40" class="maincard"
+            <mat-card fxLayout="column" fxLayoutAlign="start start" *ngIf="showAddNote" fxFlex="40" class="maincard"
                 style="max-width: 75%; width: 950px; margin-left: 445px;">
                 <input mat-input class="title" placeholder="Title" formControlName="title">
                 <input loginmat-input class="notes" placeholder="Take a note..." formControlName="description">
@@ -30,6 +30,6 @@
             </mat-card>
         </form>
     </div>
-    <!--Show all notes-->
-    <!-- <app-get-all-notes> </app-get-all-notes> -->
+    <app-get-all-note>
+    </app-get-all-note>
 </div>

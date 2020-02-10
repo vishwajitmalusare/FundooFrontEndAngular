@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NoteService } from 'src/app/Service/note.service';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateNoteComponent } from '../update-note/update-note.component';
 
 @Component({
   selector: 'app-get-all-note',
@@ -7,27 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetAllNoteComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
-/*
-import { Component, OnInit } from '@angular/core';
-import { NoteService } from 'src/app/core/service/note.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
-import { UpdateNoteComponent } from '../update-note/update-note.component';
-
-@Component({
-  selector: 'app-get-all-notes',
-  templateUrl: './get-all-notes.component.html',
-  styleUrls: ['./get-all-notes.component.scss']
-})
-export class GetAllNotesComponent implements OnInit {
-  constructor(private noteservice: NoteService, private snackbar: MatSnackBar,
-    private dialog: MatDialog) { }
+  constructor(private noteservice: NoteService, private dialog: MatDialog) { }
 
   noteList: any;
 
@@ -36,17 +19,17 @@ export class GetAllNotesComponent implements OnInit {
   }
 
   getNote() {
-    this.noteservice.getAllNotes("Note/GetAllNotes").subscribe(
+    this.noteservice.getAllNotes("note/notes").subscribe(
+
       data => {
         this.noteList = data;
-        console.log('get all note ==>', data);
+        console.log('get all note ==>',data);
       }
     )
   }
 
   openDialog(note: any) {
-    const ref = this.dialog.open(UpdateNoteComponent, {
-
+    const ref = this.dialog.open(UpdateNoteComponent,{
       width: "458px",
       height: "259px",
 
@@ -57,6 +40,4 @@ export class GetAllNotesComponent implements OnInit {
       }
     })
   }
-
 }
-*/

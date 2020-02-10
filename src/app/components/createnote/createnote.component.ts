@@ -36,7 +36,7 @@ showBar() {
 
 close() {
   if(this.createForm.value != null) {
-    this.noteservice.createNote("/noteservice/note", this.createForm.value).subscribe(
+    this.noteservice.createNote("note/createnote", this.createForm.value).subscribe(
 
       (response: any): any => {
         console.log(response)

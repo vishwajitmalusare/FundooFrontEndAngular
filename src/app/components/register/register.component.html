@@ -1,41 +1,41 @@
 <div fxLayout="column" fxLayoutAlign="center center">
         <mat-card class=card>
 
-        <mat-card-header>
-                <mat-card-title>FundooNotes</mat-card-title>
-                <mat-card-subtitle>Registration</mat-card-subtitle>
-        </mat-card-header>
+                <mat-card-header>
+                        <mat-card-title>FundooNotes</mat-card-title>
+                        <mat-card-subtitle>Registration</mat-card-subtitle>
+                </mat-card-header>
 
-        <mat-card-content>
-                <mat-form-field appearance="outline">
-                        <mat-label>Name</mat-label>
-                        <input matInput placeholder="Enter Name ..." [formControl]="name" [(ngModel)]="register.name"
-                                required>
-                </mat-form-field>
+                <mat-card-content>
+                        <mat-form-field appearance="outline">
+                                <mat-label>Name</mat-label>
+                                <input matInput placeholder="Enter Name ..." [formControl]="name"
+                                        [(ngModel)]="register.name" required>
+                        </mat-form-field>
 
-                <mat-form-field appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input matInput placeholder="Enter email ..." [formControl]="email" [(ngModel)]="register.email"
-                                required>
-                </mat-form-field>
+                        <mat-form-field appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input matInput placeholder="Enter email ..." [formControl]="email"
+                                        [(ngModel)]="register.email" required>
+                        </mat-form-field>
 
-                <mat-form-field appearance="outline">
-                        <mat-label>Password</mat-label>
-                        <input matInput placeholder="Enter password ..." [formControl]="password"
-                                [(ngModel)]="register.password">
-                </mat-form-field>
+                        <mat-form-field appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input matInput placeholder="Enter password ..." [formControl]="password"
+                                        [(ngModel)]="register.password">
+                        </mat-form-field>
 
-                <mat-form-field appearance="outline">
-                        <mat-label>Phone Number</mat-label>
-                        <input matInput placeholder="Enter Phone Number ..." [formControl]="phoneNumber"
-                                [(ngModel)]="register.phoneNumber">
-                </mat-form-field>
+                        <mat-form-field appearance="outline">
+                                <mat-label>Phone Number</mat-label>
+                                <input matInput placeholder="Enter Phone Number ..." [formControl]="phoneNumber"
+                                        [(ngModel)]="register.phoneNumber">
+                        </mat-form-field>
 
-        </mat-card-content>
+                </mat-card-content>
 
-        <mat-card-actions>
-                <button mat-raised-button (click)="onRegister()">Register</button>
-                <button mat-raised-button routerLink="/login">AlreadyRegistered</button>
-        </mat-card-actions>
-</mat-card>
+                <mat-card-actions>
+                        <button mat-raised-button (click)="onRegister()">Register</button>
+                        <button mat-raised-button routerLink="/login">AlreadyRegistered</button>
+                </mat-card-actions>
+        </mat-card>
 </div>

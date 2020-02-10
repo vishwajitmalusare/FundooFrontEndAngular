@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SidenevmenuComponent } from './sidenevmenu.component';
+import { IconsComponent } from './icons.component';
 
-describe('SidenevmenuComponent', () => {
-  let component: SidenevmenuComponent;
-  let fixture: ComponentFixture<SidenevmenuComponent>;
+describe('IconsComponent', () => {
+  let component: IconsComponent;
+  let fixture: ComponentFixture<IconsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidenevmenuComponent ]
+      declarations: [ IconsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SidenevmenuComponent);
+    fixture = TestBed.createComponent(IconsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

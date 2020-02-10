@@ -3,11 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from '../app/components/login/login.component';
 import { RegisterComponent } from '../app/components/register/register.component';
 import { DashboardComponent } from '../app/components/dashboard/dashboard.component';
-import { SidenevmenuComponent } from '../app/components/sidenevmenu/sidenevmenu.component';
 import { ResetPasswordComponent } from '../app/components/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from '../app/components/forgot-password/forgot-password.component';
 import { CreatenoteComponent } from 'src/app/components/createnote/createnote.component';
 import { GetAllNoteComponent } from 'src/app/components/get-all-note/get-all-note.component';
+import { UpdateNoteComponent } from 'src/app/components/update-note/update-note.component';
+import { IconsComponent } from 'src/app/components/icons/icons.component';
+import { RestoreComponent } from 'src/app/components/restore/restore.component';
+import { ArchiveComponent } from 'src/app/components/archive/archive.component';
+import { TrashComponent } from 'src/app/components/trash/trash.component'
+
 
 const routes: Routes = [
   
@@ -21,9 +26,6 @@ const routes: Routes = [
       path:'dashboard', component:DashboardComponent
     },
     {
-      path:'sidenav', component:SidenevmenuComponent
-    },
-    {
       path:'resetpassword', component:ResetPasswordComponent
     },
     {
@@ -34,6 +36,21 @@ const routes: Routes = [
     },
     {
       path:'getallnotes', component:GetAllNoteComponent
+    },
+    {
+      path:'updatenote', component: UpdateNoteComponent
+    },
+    {
+      path:'icons', component: IconsComponent
+    },
+    {
+      path:'restoretrash', component: RestoreComponent
+    },
+    {
+      path:'trashuntrash', component: TrashComponent
+    },
+    {
+      path:'archiveunarchive',component:ArchiveComponent
     }
 
   ]

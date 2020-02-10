@@ -18,14 +18,21 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { SidenevmenuComponent } from './components/sidenevmenu/sidenevmenu.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { CreatenoteComponent } from './components/createnote/createnote.component';
-import { GetAllNoteComponent } from './components/get-all-note/get-all-note.component'; 
+import { GetAllNoteComponent } from './components/get-all-note/get-all-note.component';
+import {MatDialogModule} from '@angular/material/dialog'; 
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import { IconsComponent } from './components/icons/icons.component';
+import { RestoreComponent } from './components/restore/restore.component';
+import { TrashComponent } from './components/trash/trash.component';
+import { ArchiveComponent } from './components/archive/archive.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -33,11 +40,15 @@ import { GetAllNoteComponent } from './components/get-all-note/get-all-note.comp
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    SidenevmenuComponent,
     ResetPasswordComponent,
     ForgotPasswordComponent,
     CreatenoteComponent,
-    GetAllNoteComponent
+    GetAllNoteComponent,
+    UpdateNoteComponent,
+    IconsComponent,
+    RestoreComponent,
+    TrashComponent,
+    ArchiveComponent
   ],
   imports: [
     AppRoutingModule,
@@ -57,6 +68,9 @@ import { GetAllNoteComponent } from './components/get-all-note/get-all-note.comp
     MatSidenavModule,
     MatDividerModule,
     MatListModule,
+    MatDialogModule,
+    MatCheckboxModule,
+    MatTooltipModule,
     ReactiveFormsModule
   ],
   providers: [],

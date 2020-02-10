@@ -1,33 +1,39 @@
-<div fxLayout="row" fxLayoutAlign="center center">
-        <mat-card class="card">
-                <div fxLayout="column" fxLayoutAlign="center start">
-                        <mat-card-header>
-                                <mat-card-title>FundooNotes</mat-card-title>
-                                <mat-card-subtitle>Login</mat-card-subtitle>
-                        </mat-card-header>
-
-                        <div fxLayout="column" fxLayoutAlign="center center">
-                                <mat-card-content>
-                                        <mat-form-field appearance="outline">
-                                                <mat-label>Email</mat-label>
-                                                <input matInput placeholder="Enter email" [formControl]="email"
-                                                        [(ngModel)]="login.email" required>
-                                        </mat-form-field>
-
-                                        <mat-form-field appearance="outline">
-                                                <mat-label>Password</mat-label>
-                                                <input matInput placeholder="Enter password" [formControl]="password"
-                                                        [(ngModel)]="login.password" required>
-                                        </mat-form-field>
-
-                                </mat-card-content>
+<div class="main" fxLayout="column" fxLayoutAlign="center center">
+        <mat-card class="maincard" style="height: 65vh; width: 257px;">
+                <div fxLayout="column" fxLayoutAlign="space-between center">
+                        <div>
+                                <mat-card-title>
+                                        <h2>FundooNotes</h2>
+                                </mat-card-title>
+                                <mat-card-subtitle>
+                                        <h1>Login</h1>
+                                </mat-card-subtitle>
                         </div>
-
-                        <mat-card-actions>
-                                <button mat-raised-button (click)="onLogin()">Login</button>
-                                <button mat-raised-button routerLink="/register">You are new to FundooNotes ..?</button>
-                        </mat-card-actions>
+                        <div>
+                                <mat-form-field appearance="outline">
+                                        <mat-label>Email</mat-label>
+                                        <input matInput placeholder="email" [formControl]="email"
+                                                [(ngModel)]="login.email">
+                                        <mat-error *ngIf="email.invalid">please enter valid email</mat-error>
+                                        <mat-icon matSuffix>email</mat-icon>
+                                </mat-form-field>
+                        </div>
+                        <div>
+                                <mat-form-field appearance="outline">
+                                        <input matInput placeholder="Enter password" [formControl]="password"
+                                                [(ngModel)]="login.password" [type]="hide ? 'password' : 'text'">
+                                        <mat-error *ngIf="email.invalid">please enter valid password</mat-error>
+                                        <mat-icon matSuffix (click)="hide=!hide">
+                                                {{hide ? 'visibility_off':'visibility'}}</mat-icon>
+                                </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxlayoutAlign="space-between center">
+                                <button style="margin-right: 45px;" mat-flat-button color="primary" (click)="onLogin()"
+                                        [disabled]='password.invalid'>login</button>
+                                <button style="padding-left: 44px;" mat-flat-button
+                                        routerLink="/register">register</button>
+                        </div>
+                        <a style="margin-left: -104px; margin-top: 16px;" href="forgetpassword"></a>
                 </div>
-
         </mat-card>
 </div>
