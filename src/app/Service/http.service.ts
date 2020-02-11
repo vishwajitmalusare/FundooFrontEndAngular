@@ -4,7 +4,8 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  'authorization': localStorage.getItem('token')
 };
 
 @Injectable({
@@ -18,6 +19,8 @@ export class HttpService {
   baseUrl = environment.baseUrl;
 
   public postRequest(url: any, data: any): any {
+    console.log(url, data, httpOptions);
+    
     return this.httpclient.post(this.baseUrl + url, data, httpOptions);
   }
 

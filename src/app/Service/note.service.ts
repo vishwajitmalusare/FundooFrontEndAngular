@@ -17,7 +17,7 @@ export class NoteService {
   }
 
   getAllNotes(url) {
-    return this.httpclient.get(this.baseUrl+url,{headers:new HttpHeaders().set("email",localStorage.getItem("email"))})
+    return this.httpclient.get(this.baseUrl+url)
   }
 
   updateNote(url, data) {

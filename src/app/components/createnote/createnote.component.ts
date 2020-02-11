@@ -38,7 +38,7 @@ close() {
   if(this.createForm.value != null) {
     this.noteservice.createNote("note/createnote", this.createForm.value).subscribe(
 
-      (response: any): any => {
+      (response: any) => {
         console.log(response)
         if(response.statusCode == 201) {
           console.log(response)
@@ -53,7 +53,7 @@ close() {
     this.showAddNote = false;
   }
   else {
-    this.snackbar.open("please enter title and description","open",{ duration: 2500 })
+    this.snackbar.open("please enter title and description","open",{ duration: 25000 })
   }
 }
 }

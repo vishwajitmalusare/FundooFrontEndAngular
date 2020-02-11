@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
         console.log(response)
         if(response.statuscode == 200) {
           console.log(response);
-          localStorage.setItem('token',response.token);
+          localStorage.setItem('token',response.data);
           localStorage.setItem('name', response.statusMessage);
           localStorage.setItem('email', this.login.email);
           this.snackbar.open("Login successfull...","close", { duration: 2500} )
