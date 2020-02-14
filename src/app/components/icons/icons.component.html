@@ -5,7 +5,8 @@
     <button mat-icon-button>
         <mat-icon>person_add</mat-icon>
     </button>
-    <button mat-icon-button (click)="onColor(noteColor)" [matMenuTriggerFor]="color">
+    <!-- <button mat-icon-button (click)="onColor(noteColor)" [matMenuTriggerFor]="color"> -->
+        <button mat-icon-button [matMenuTriggerFor]="color">
         <mat-icon>color_lens</mat-icon>
     </button>
     <button mat-icon-button>
@@ -15,7 +16,11 @@
         <mat-icon>archive</mat-icon>
     </button>
     <button mat-icon-button>
-        <mat-icon [matMenuTriggerFor]="more_option">more_vert</mat-icon>
+        <mat-icon [matMenuTriggerFor]="more_options">more_vert</mat-icon>
+        <!-- <mat-menu #menu="matMenu">
+            <button mat-menu-item>Delete Note</button>
+            <button mat-menu-item>Add Labels</button>
+          </mat-menu> -->
     </button>
 </div>
 

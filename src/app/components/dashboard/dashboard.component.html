@@ -32,31 +32,31 @@
       </div>
 
       <div fxFlex="35" fxLayout="row" fxLayoutGroup="12%" style="margin-left: 100px; margin-top: 8px;">
-        <div fxFlex="7">
+        <div fxFlex="14">
           <button mat-icon-button>
             <mat-icon matTooltip="Refresh">refresh</mat-icon>
           </button>
         </div>
 
-        <div fxFlex="7">
+        <div fxFlex="14">
           <button mat-icon-button>
             <mat-icon matTooltip="Grid_view">view_agenda</mat-icon>
           </button>
         </div>
 
-        <div fxFlex="7">
+        <div fxFlex="14">
           <button mat-icon-button>
             <mat-icon matTooltip="settings">settings</mat-icon>
           </button>
         </div>
 
-        <div fxFlex="7">
+        <div fxFlex="14">
           <button mat-icon-button>
             <mat-icon matTooltip="app">apps</mat-icon>
           </button>
         </div>
 
-        <div fxFlex="7">
+        <div fxFlex="14">
           <button mat-icon-button (click)="Profile()">
             <mat-icon matTooltip="account" [matMenuTriggerFor]="more_option">account_circle</mat-icon>
           </button>
@@ -124,8 +124,8 @@
  
   <mat-sidenav-content class="content">
     <router-outlet></router-outlet>
-    <!--Create note component
-       <app-createnote></app-createnote> -->
+    <!--Create note component -->
+       <app-createnote></app-createnote>
   </mat-sidenav-content>
 
 

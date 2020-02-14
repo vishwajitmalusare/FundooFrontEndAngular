@@ -22,9 +22,11 @@ export class IconsComponent implements OnInit {
     [
       {colorName: "white", colorCode: '#FFFFFF'},
       {colorName: 'green', colorCode: '#008000' },
+      {colorName: "orange", colorCode: "#ffa500" },
       {colorName: 'grey', colorCode: '808080' }
     ],
     [
+      { colorName: "lime", colorCode: " #00FF00" },
       { colorName: 'indian red', colorCode: '#CD5C5C' },
       { colorName: 'crimson', colorCode: '#DC143C' },
       { colorName: 'yellow', colorCode: '#FFF00' }
@@ -32,17 +34,26 @@ export class IconsComponent implements OnInit {
     [
       { colorName: 'Purple', colorCode: '#80080'} ,
       { colorName: 'Teal', colorCode: '#008080' },
+      { colorName: "blue", colorCode: "#0000FF" },
       { colorName: 'light blue', colorCode: '#ADD8E6' }
     ]
   ]
 
   @Input() noteInfo: any
 
+// Work on it 
+//  onColor(noteColor) {
+//     let data={
+//       color:noteColor.colorName,
+//       noteId:this.noteInfo.noteId
+//     }
+//  this.noteService.setColorToNote("note/setColor?color="+data.color,data.noteId).subscribe()
+//   }
   onTrash() {
     this.noteService.trashUnTrashNote("note/trashanduntrash?noteId="+this.noteInfo.noteId).subscribe(
 
       (response: any): any => {
-        if(response.statusCode == 301) {
+        if(response.statuscode == 200) {
           this.snackbar.open("note is trashed","close", { duration: 2500 });
         }
         else {
@@ -55,8 +66,8 @@ export class IconsComponent implements OnInit {
   onArchive(){
     this.noteService.archivedUnarchiveNote("note/archiveandunarchive?noteId="+this.noteInfo.noteId).subscribe(
       (response: any): any => {
-        if(response.statusCode == 200) {
-          this.snackbar.open(response.statusMessage,"close", { duration: 2500 })
+        if(response.statuscode == 200) {
+          this.snackbar.open("note is archive","close", { duration: 2500 })
         }
       }
     )

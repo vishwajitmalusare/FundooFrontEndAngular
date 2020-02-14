@@ -19,7 +19,7 @@ export class GetAllNoteComponent implements OnInit {
   }
 
   getNote() {
-    this.noteservice.getAllNotes("note/getnotes?token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmdW5kb29Ob3RlcyIsImp0aSI6IjVlMzkzYjllMGNhNmIxM2M3ZTE5Y2FiOSJ9.LDt_9I50ik2Njs_m53_0q0eiLVDwgIkiYbJmRP5zS2M").subscribe(
+    this.noteservice.getAllNotes("note/getnotes").subscribe(
 
       data => {
         this.noteList = data;

@@ -1,9 +1,9 @@
 .mainCard{
     margin: 95px;
-    width: 800px;
+    width: 900px;
 }
 mat-card{
-    width: 95px;
+    width: 225px;
     float: left;
     margin: 15px;
 }
