@@ -13,6 +13,11 @@ export class GetAllNoteComponent implements OnInit {
   constructor(private noteservice: NoteService, private dialog: MatDialog) { }
 
   noteList: any;
+  //set color
+  color: string;
+  receiveColor($event){
+this.color = $event
+  }
 
   ngOnInit() {
     this.getNote();
@@ -23,7 +28,6 @@ export class GetAllNoteComponent implements OnInit {
 
       data => {
         this.noteList = data;
-        console.log('get all note ==>',data);
       }
     )
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from 'src/app/Service/note.service';
 
@@ -7,7 +7,12 @@ import { NoteService } from 'src/app/Service/note.service';
   templateUrl: './icons.component.html',
   styleUrls: ['./icons.component.css']
 })
+
+
 export class IconsComponent implements OnInit {
+  
+  color: string="";
+  @Output() colorEmmiter = new EventEmitter<string>();
 
   constructor(private snackbar: MatSnackBar, private noteService: NoteService) { }
   labelList: any;
@@ -29,10 +34,10 @@ export class IconsComponent implements OnInit {
       { colorName: "lime", colorCode: " #00FF00" },
       { colorName: 'indian red', colorCode: '#CD5C5C' },
       { colorName: 'crimson', colorCode: '#DC143C' },
-      { colorName: 'yellow', colorCode: '#FFF00' }
+      { colorName: 'yellow', colorCode: '#ffff00' }
     ],
     [
-      { colorName: 'Purple', colorCode: '#80080'} ,
+      { colorName: 'Purple', colorCode: '#6a0dad'} ,
       { colorName: 'Teal', colorCode: '#008080' },
       { colorName: "blue", colorCode: "#0000FF" },
       { colorName: 'light blue', colorCode: '#ADD8E6' }
@@ -41,14 +46,26 @@ export class IconsComponent implements OnInit {
 
   @Input() noteInfo: any
 
-// Work on it 
-//  onColor(noteColor) {
-//     let data={
-//       color:noteColor.colorName,
-//       noteId:this.noteInfo.noteId
-//     }
-//  this.noteService.setColorToNote("note/setColor?color="+data.color,data.noteId).subscribe()
-//   }
+
+//Work on it 
+onColor(noteColor) {
+    let data={
+      color:noteColor
+    }
+    this.color=noteColor;
+    console.log(noteColor);
+    console.log(this.color);
+     this.colorEmmiter.emit(this.color);
+
+ this.noteService.setColorToNote("note/setColor?noteId="+this.noteInfo.noteId,data).subscribe(
+   
+  (response: any): any => {
+     if(response.statuscode == 200) {
+       this.snackbar.open("note is colored","close",{ duration: 2500 });
+     }
+   }
+ )
+  }
   onTrash() {
     this.noteService.trashUnTrashNote("note/trashanduntrash?noteId="+this.noteInfo.noteId).subscribe(
 

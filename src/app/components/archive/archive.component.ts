@@ -17,10 +17,9 @@ export class ArchiveComponent implements OnInit {
   }
 
   getArchive() {
-    this.noteservice.archiveNotes("note/getarchive").subscribe(
+    this.noteservice.getArchiveNotes("note/getarchive").subscribe(
       data => {
         this.notesList=data;
-        console.log(data);
       }
     )
   }

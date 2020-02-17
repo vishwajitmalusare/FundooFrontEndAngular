@@ -33,6 +33,8 @@ import { TrashComponent } from './components/trash/trash.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/child/child.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     IconsComponent,
     RestoreComponent,
     TrashComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     AppRoutingModule,

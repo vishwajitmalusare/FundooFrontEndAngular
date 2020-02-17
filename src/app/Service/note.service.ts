@@ -13,8 +13,7 @@ export class NoteService {
 
   public createNote(url , data) { 
     return this.httpclient.post(this.baseUrl+url, data, { headers:new HttpHeaders()
-      .set("token",localStorage.getItem("token"))});
-    
+      .set("token",localStorage.getItem("token"))});   
   }
 
   getAllNotes(url) {
@@ -23,18 +22,18 @@ export class NoteService {
   }
 
   updateNote(url, data) {
-    return this.httpclient.put(this.baseUrl+url,data,{headers:new HttpHeaders().set("email",localStorage.getItem("email"))})
+    return this.httpclient.put(this.baseUrl+url,data,{headers:new HttpHeaders().set("token",localStorage.getItem("token"))})
   }
 
   setColorToNote(url,data) {
-    return this.httpclient.put(this.baseUrl+url,data,{headers:new HttpHeaders().set("email",localStorage.getItem("email"))})
+    return this.httpclient.post(this.baseUrl+url,data,{headers:new HttpHeaders().set("email",localStorage.getItem("email"))})
   }
   trashUnTrashNote(url) {
     return this.httpclient.get(this.baseUrl+url,{headers: new HttpHeaders().set("token",localStorage.getItem("token"))})
   }
 
-  archiveNotes(url) {
-    return this.httpclient.get(this.baseUrl+url,{headers: new HttpHeaders().set("email",localStorage.getItem("email"))})
+  getArchiveNotes(url) {
+    return this.httpclient.get(this.baseUrl+url,{headers: new HttpHeaders().set("token",localStorage.getItem("token"))})
   }
 
   getTrashNotes(url) {
@@ -42,7 +41,7 @@ export class NoteService {
   }
 
   deleteNote(url) {
-    return this.httpclient.get(this.baseUrl+url,{headers: new HttpHeaders().set("email",localStorage.getItem("email"))})
+    return this.httpclient.delete(this.baseUrl+url,{headers: new HttpHeaders().set("token",localStorage.getItem("token"))})
   }
 
   archivedUnarchiveNote(url) {

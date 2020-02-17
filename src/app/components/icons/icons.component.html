@@ -17,17 +17,13 @@
     </button>
     <button mat-icon-button>
         <mat-icon [matMenuTriggerFor]="more_options">more_vert</mat-icon>
-        <!-- <mat-menu #menu="matMenu">
-            <button mat-menu-item>Delete Note</button>
-            <button mat-menu-item>Add Labels</button>
-          </mat-menu> -->
     </button>
 </div>
 
 <mat-menu #color="matMenu" [overlapTrigger]="false">
     <div fxLayout="row" fxLayoutGap="10px" style="margin-top: 3px;" *ngFor="let color of colors">
         <div *ngFor="let noteColor of color">
-            <button [ngStyle]="{'background-color':noteColor.colorCode }" (click)="onColor(noteColor.colorName)"
+            <button mat-button [ngStyle]="{'background-color':noteColor.colorCode }" (click)="onColor(noteColor.colorCode)"
                 matTooltip="{{ noteColor.colorName }}" mat-mini-fab></button>
         </div>
     </div>

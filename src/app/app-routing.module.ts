@@ -11,7 +11,9 @@ import { UpdateNoteComponent } from 'src/app/components/update-note/update-note.
 import { IconsComponent } from 'src/app/components/icons/icons.component';
 import { RestoreComponent } from 'src/app/components/restore/restore.component';
 import { ArchiveComponent } from 'src/app/components/archive/archive.component';
-import { TrashComponent } from 'src/app/components/trash/trash.component'
+import { TrashComponent } from 'src/app/components/trash/trash.component';
+import { ChildComponent } from 'src/app/components/child/child.component';
+import { ParentComponent } from  'src/app/components/parent/parent.component';
 
 
 const routes: Routes = [
@@ -47,10 +49,16 @@ const routes: Routes = [
       path:'restoretrash', component: RestoreComponent
     },
     {
-      path:'trashuntrash', component: TrashComponent
+      path:'gettrash', component: TrashComponent
     },
     {
-      path:'archiveunarchive',component:ArchiveComponent
+      path:'getarchive',component:ArchiveComponent
+    },
+    {
+      path:'parent', component:ParentComponent
+    },
+    {
+      path:'child', component: ChildComponent
     }
 
   ]

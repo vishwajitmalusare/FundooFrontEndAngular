@@ -24,11 +24,11 @@ export class DashboardComponent implements OnInit {
   }
 
   onArchive(){
-    this.router.navigate(['dashboard/getArchive'])
+    this.router.navigate(['/getarchive'])
   }
 
   onDelete() {
-    this.router.navigate(['dashboard/getTrash'])
+    this.router.navigate(['gettrash'])
   }
   onReminder() {
     alert("Reminder Notes");

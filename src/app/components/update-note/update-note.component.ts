@@ -27,7 +27,6 @@ export class UpdateNoteComponent implements OnInit {
     });
   }
    updateNote() {
-     console.log(this.data.noteId)
      this.noteService.updateNote("note/updatenote?noteId="+ this.data.noteId, this.updateForm.value).subscribe(
 
       (response: any): any => {

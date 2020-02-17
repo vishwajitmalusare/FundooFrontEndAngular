@@ -18,11 +18,11 @@ export class RestoreComponent implements OnInit {
   onRestore() {
     this.noteService.trashUnTrashNote("note/trashanduntrash?noteId="+this.noteInfo.noteId).subscribe(
       (response: any): any => {
-        if(response.statusCode==200) {
+        if(response.statuscode==200) {
           this.snackBar.open("note restored","close", { duration:2500 })
         }
         else {
-          this.snackBar.open(response.message,"close",{duration:2500})
+          this.snackBar.open(" note not restored","close",{duration:2500})
         }
       }
     )
@@ -30,8 +30,8 @@ export class RestoreComponent implements OnInit {
   onDelete() {
     this.noteService.deleteNote("note/deletenote?noteId="+this.noteInfo.noteId).subscribe(
       (response: any): any => {
-        if(response.statusCode==200) {
-          this.snackBar.open("note deleted permenntly","close", { duration:2500 })
+        if(response.statuscode==200) {
+          this.snackBar.open("note deleted permenantly","close", { duration:2500 })
         }
         else {
           this.snackBar.open("note not in trash","close",{duration:2500})

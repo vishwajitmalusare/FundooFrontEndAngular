@@ -19,7 +19,6 @@ export class TrashComponent implements OnInit {
     this.noteService.getTrashNotes("note/gettrash").subscribe(
       data => {
         this.notesList= data;
-        console.log('get trash note =>', data);
       }
     )
   }
