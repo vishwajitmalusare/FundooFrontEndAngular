@@ -53,8 +53,8 @@ onColor(noteColor) {
       color:noteColor
     }
     this.color=noteColor;
-    console.log(noteColor);
-    console.log(this.color);
+    // console.log(noteColor);
+    // console.log(this.color);
      this.colorEmmiter.emit(this.color);
 
  this.noteService.setColorToNote("note/setColor?noteId="+this.noteInfo.noteId,data).subscribe(

@@ -19,22 +19,23 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  //Understand this
   getNotes() {
-    this.router.navigate(['/dashboard/createnote'])
+    this.router.navigate(['/dashboard/note'])
   }
 
   onArchive(){
-    this.router.navigate(['/getarchive'])
+    this.router.navigate(['/dashboard/getarchive'])
   }
 
   onDelete() {
-    this.router.navigate(['gettrash'])
+    this.router.navigate(['/dashboard/gettrash'])
   }
   onReminder() {
     alert("Reminder Notes");
   }
 
-  onEditable() {
+  onEditLabel() {
     alert("Editable for Notes");
    }
    

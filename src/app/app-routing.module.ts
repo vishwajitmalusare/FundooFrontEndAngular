@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from '../app/components/login/login.component';
 import { RegisterComponent } from '../app/components/register/register.component';
@@ -12,9 +12,7 @@ import { IconsComponent } from 'src/app/components/icons/icons.component';
 import { RestoreComponent } from 'src/app/components/restore/restore.component';
 import { ArchiveComponent } from 'src/app/components/archive/archive.component';
 import { TrashComponent } from 'src/app/components/trash/trash.component';
-import { ChildComponent } from 'src/app/components/child/child.component';
-import { ParentComponent } from  'src/app/components/parent/parent.component';
-
+import { NoteComponent } from 'src/app/components/note/note.component';
 
 const routes: Routes = [
   
@@ -23,15 +21,31 @@ const routes: Routes = [
     },
     { 
       path:'register', component:RegisterComponent
-    }, 
-    { 
-      path:'dashboard', component:DashboardComponent
     },
     {
       path:'resetpassword', component:ResetPasswordComponent
     },
     {
       path:'forgetpassword', component:ForgotPasswordComponent
+    }, 
+    { 
+      path:'dashboard', component:DashboardComponent,
+
+      children:[
+        {
+          path:'note', component: NoteComponent
+        },
+        {
+          path:'gettrash', component: TrashComponent
+        },
+        {
+          path:'getarchive',component:ArchiveComponent
+        }
+      ]
+      /*This are individual component for testItsWorking*/
+    },
+    {
+      path:'icons', component: IconsComponent
     },
     {
       path:'createnote', component:CreatenoteComponent
@@ -43,9 +57,6 @@ const routes: Routes = [
       path:'updatenote', component: UpdateNoteComponent
     },
     {
-      path:'icons', component: IconsComponent
-    },
-    {
       path:'restoretrash', component: RestoreComponent
     },
     {
@@ -55,10 +66,7 @@ const routes: Routes = [
       path:'getarchive',component:ArchiveComponent
     },
     {
-      path:'parent', component:ParentComponent
-    },
-    {
-      path:'child', component: ChildComponent
+      path:'note', component: NoteComponent
     }
 
   ]

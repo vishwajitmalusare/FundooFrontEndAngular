@@ -33,8 +33,8 @@ import { TrashComponent } from './components/trash/trash.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { ParentComponent } from './components/parent/parent.component';
-import { ChildComponent } from './components/child/child.component';
+import { NoteComponent } from './components/note/note.component';
+import { PdftonoteComponent } from './components/pdftonote/pdftonote.component';
 
 @NgModule({
   declarations: [
@@ -51,8 +51,8 @@ import { ChildComponent } from './components/child/child.component';
     RestoreComponent,
     TrashComponent,
     ArchiveComponent,
-    ParentComponent,
-    ChildComponent
+    NoteComponent,
+    PdftonoteComponent
   ],
   imports: [
     AppRoutingModule,
