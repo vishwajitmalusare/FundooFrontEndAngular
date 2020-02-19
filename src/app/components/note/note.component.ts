@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteComponent implements OnInit {
 
+  data: any;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  create($event){
+    this.data=$event
   }
 
 }

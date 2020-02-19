@@ -29,9 +29,16 @@
           <input class="search" (input)="onSearch($event.target.value)" matInput placeholder="Search"
             style="width: 450px;" autocomplete="off">
         </mat-card>
-      </div>
+      </div>       
 
       <div fxFlex="35" fxLayout="row" fxLayoutGroup="12%" style="margin-left: 100px; margin-top: 8px;">
+        
+        <div fxFlex="14">
+          <button mat-icon-button (click)="onNoteToPdf()">
+            <mat-icon matTooltip="ExportToPDF">insert_drive_file</mat-icon>
+          </button>
+        </div>
+
         <div fxFlex="14">
           <button mat-icon-button>
             <mat-icon matTooltip="Refresh">refresh</mat-icon>
@@ -125,6 +132,9 @@
   <mat-sidenav-content class="content">
     <router-outlet></router-outlet>
     <!--Create note component -->
+    <!-- <app-createnote></app-createnote>
+    <app-get-all-note></app-get-all-note> -->
+    
   </mat-sidenav-content>
 
 

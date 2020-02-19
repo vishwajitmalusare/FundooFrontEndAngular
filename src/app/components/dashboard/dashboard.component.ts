@@ -21,15 +21,15 @@ export class DashboardComponent implements OnInit {
 
   //Understand this
   getNotes() {
-    this.router.navigate(['/dashboard/note'])
+    this.router.navigate(['/createnote'])
   }
 
   onArchive(){
-    this.router.navigate(['/dashboard/getarchive'])
+    this.router.navigate(['/getarchive'])
   }
 
   onDelete() {
-    this.router.navigate(['/dashboard/gettrash'])
+    this.router.navigate(['/gettrash'])
   }
   onReminder() {
     alert("Reminder Notes");
@@ -40,4 +40,8 @@ export class DashboardComponent implements OnInit {
    }
    
    onRefresh() {}
+
+   onNoteToPdf() {
+     this.router.navigate(['/notetopdf'])
+   }
 }

@@ -13,6 +13,7 @@ import { RestoreComponent } from 'src/app/components/restore/restore.component';
 import { ArchiveComponent } from 'src/app/components/archive/archive.component';
 import { TrashComponent } from 'src/app/components/trash/trash.component';
 import { NoteComponent } from 'src/app/components/note/note.component';
+import { PdftonoteComponent } from 'src/app/components/pdftonote/pdftonote.component';
 
 const routes: Routes = [
   
@@ -32,6 +33,9 @@ const routes: Routes = [
       path:'dashboard', component:DashboardComponent,
 
       children:[
+        {
+            path:'' ,component:NoteComponent
+        },
         {
           path:'note', component: NoteComponent
         },
@@ -67,6 +71,9 @@ const routes: Routes = [
     },
     {
       path:'note', component: NoteComponent
+    },
+    {
+      path:'notetopdf', component: PdftonoteComponent
     }
 
   ]

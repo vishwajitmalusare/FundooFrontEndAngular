@@ -1,9 +1,9 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, Output, EventEmitter } from '@angular/core';
 import { Note } from 'src/app/Model/note';
 import { NoteService } from 'src/app/Service/note.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'; 
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +20,7 @@ export class CreatenoteComponent implements OnInit {
   showAddNote: boolean
   note: Note = new Note();
   createForm: FormGroup;
+  @Output() createNote = new EventEmitter()
 
   ngOnInit() {
     this.showAddNote = false;
@@ -30,30 +31,35 @@ export class CreatenoteComponent implements OnInit {
       }
     )
   }
-showBar() {
-  this.showAddNote = true;
-}
+  showBar() {
+    this.showAddNote = true;
+  }
 
-close() {
-  if(this.createForm.value != null) {
-    this.noteservice.createNote("note/createnote", this.createForm.value).subscribe(
-
-      (response: any) => {
-        console.log(response)
-        if(response.statusCode == 201) {
-          console.log(response)
-          this.snackbar.open("note created","close",{ duration:2500 })
-        }
-        else{ 
-          console.log(response)
-          this.snackbar.open("note not created","close",{ duration:2500 })
-        }
+  close() {
+    if (this.createForm.value != null) {
+      let data = {
+        "title": this.createForm.value.title,
+        "discription": this.createForm.value.description
       }
-    )
-    this.showAddNote = false;
+
+      this.noteservice.createNote("note/createnote",this.createForm.value).subscribe(
+        (response: any) => {
+          console.log(response)
+          if (response.statuscode == 201) {
+            console.log(response)
+            this.snackbar.open("note created", "close", { duration: 2500 })
+                this.createNote.emit(data)
+          }
+          else {
+            console.log(response)
+            this.snackbar.open("note not created", "close", { duration: 2500 })
+          }
+        }
+      )
+      this.showAddNote = false;
+    }
+    else {
+      this.snackbar.open("please enter title and description", "open", { duration: 25000 })
+    }
   }
-  else {
-    this.snackbar.open("please enter title and description","open",{ duration: 25000 })
-  }
-}
 }
