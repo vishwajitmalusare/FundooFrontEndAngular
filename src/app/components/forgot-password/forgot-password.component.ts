@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from 'src/app/Service/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-forgot-password',
@@ -11,12 +12,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ForgotPasswordComponent implements OnInit {
 
+
   constructor(private router: Router, private http: HttpClient, private snackbar: MatSnackBar) { }
 
   userService: UserService = new UserService(this.http, this.router);
-  email: string;
-  password: string;
-  confirmPassword: string;
+  email = new FormControl('');
+  password = new FormControl('');
+  confirmPassword = new FormControl('');
   ngOnInit() {
   }
 
@@ -36,4 +38,5 @@ export class ForgotPasswordComponent implements OnInit {
 this.snackbar.open("password not matched..","close",{ duration: 2500 })
     }
   }
+
 }

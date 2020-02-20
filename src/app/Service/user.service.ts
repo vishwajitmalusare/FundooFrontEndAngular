@@ -32,4 +32,8 @@ export class UserService {
   public passwordReset(data) {
     return this.httpService.getRequest(data);
   }
+
+  public uploadProfile(data) {
+    return this.httpService.postRequest("userservice/uploadprofilepicture",data);
+  }
 }

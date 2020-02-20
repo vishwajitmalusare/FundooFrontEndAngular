@@ -14,7 +14,7 @@ export class NoteComponent implements OnInit {
   }
 
   create($event){
-    this.data=$event
+    // this.data=$event
   }
 
 }

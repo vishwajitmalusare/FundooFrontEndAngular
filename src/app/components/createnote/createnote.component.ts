@@ -23,6 +23,7 @@ export class CreatenoteComponent implements OnInit {
   @Output() createNote = new EventEmitter()
 
   ngOnInit() {
+    
     this.showAddNote = false;
     this.createForm = new FormBuilder().group(
       {

@@ -1,19 +1,18 @@
 <div fxLayout="row" fxLayoutAlign="start">
     <button mat-icon-button>
-        <mat-icon>add_alert</mat-icon>
+        <mat-icon matTooltip="Remind me">add_alert</mat-icon>
     </button>
     <button mat-icon-button>
-        <mat-icon>person_add</mat-icon>
+        <mat-icon matTooltip="Collaborater">person_add</mat-icon>
     </button>
-    <!-- <button mat-icon-button (click)="onColor(noteColor)" [matMenuTriggerFor]="color"> -->
         <button mat-icon-button [matMenuTriggerFor]="color">
-        <mat-icon>color_lens</mat-icon>
+        <mat-icon matTooltip="change Color">color_lens</mat-icon>
     </button>
     <button mat-icon-button>
-        <mat-icon>image</mat-icon>
+        <mat-icon matTooltip="Add image">image</mat-icon>
     </button>
     <button mat-icon-button (click)="onArchive()">
-        <mat-icon>archive</mat-icon>
+        <mat-icon matTooltip="Archive">archive</mat-icon>
     </button>
     <button mat-icon-button>
         <mat-icon [matMenuTriggerFor]="more_options">more_vert</mat-icon>

@@ -35,6 +35,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NoteComponent } from './components/note/note.component';
 import { PdftonoteComponent } from './components/pdftonote/pdftonote.component';
+import { AvatarModule } from 'ngx-avatar';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { PdftonoteComponent } from './components/pdftonote/pdftonote.component';
   ],
   imports: [
     AppRoutingModule,
+    AvatarModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,

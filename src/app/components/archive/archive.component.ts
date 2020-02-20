@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NoteService } from 'src/app/Service/note.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-archive',
@@ -8,7 +9,8 @@ import { NoteService } from 'src/app/Service/note.service';
 })
 export class ArchiveComponent implements OnInit {
 
-  constructor(private noteservice:NoteService) { }
+
+  constructor(private noteservice:NoteService, private http:HttpClient) { }
   notesList:any
 
   @Input() noteInfo:any
@@ -23,5 +25,4 @@ export class ArchiveComponent implements OnInit {
       }
     )
   }
-
 }

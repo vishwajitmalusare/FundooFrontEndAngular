@@ -13,10 +13,8 @@
                                 <mat-form-field appearance="outline">
                                         <mat-label>FileName</mat-label>
                                         <input matInput placeholder="file name if you want" [formControl]="fileName">
-                                        <!-- <input matInput placeholder="filename if you want" [formControl]="fileName"
-                                                [(ngModel)]="this.fileName"> -->
                                         <mat-error *ngIf="fileName.invalid">please enter valid filename</mat-error>
-                                        <mat-icon matSuffix>email</mat-icon>
+                                        <mat-icon matSuffix>edit</mat-icon>
                                 </mat-form-field>
 
 
@@ -25,8 +23,8 @@
                         <div>
                                 <button style="margin-right: 45px;" mat-flat-button color="primary"
                                         (click)="onPdfToNote()">create</button>
-                                <!-- Think of something like cancel <button style="padding-left: 44px;" mat-flat-button
-                                    routerLink="/register">register</button> -->
+                                <button style="padding-left: 44px;" mat-flat-button
+                                    routerLink="/dashboard">Cancel</button>
                         </div>
                 </div>
         </mat-card>
