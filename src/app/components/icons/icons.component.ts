@@ -48,17 +48,21 @@ export class IconsComponent implements OnInit {
 
 onColor(noteColor) {
     let data={
-      color:noteColor
+      color:noteColor,
+      noteId:this.noteInfo.noteId
     }
     this.color=noteColor;
+
     console.log(noteColor);
-    console.log(this.color);
-     this.colorEmmiter.emit(this.color);
+    console.log("============",this.noteInfo);
+    
 
  this.noteService.setColorToNote("note/setColor?noteId="+this.noteInfo.noteId,data).subscribe(
    
   (response: any): any => {
      if(response.statuscode == 200) {
+       console.log("backend res",response);
+       this.colorEmmiter.emit(this.color);
        this.snackbar.open("note is colored","close",{ duration: 2500 });
      }
    }
